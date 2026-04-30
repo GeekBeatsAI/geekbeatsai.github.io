@@ -1,22 +1,226 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GeekBeats</title>
+  <title>GeekBeats | AI Content Studio</title>
+  <meta name="description" content="GeekBeats is an AI-powered content studio building short-form video workflows and platform integrations, including TikTok sandbox-ready publishing flows." />
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.6;color:#111}
-    a{color:#0b57d0;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .card{border:1px solid #e5e7eb;border-radius:10px;padding:18px}
+    :root {
+      --bg:#0b1020;
+      --panel:#131a2f;
+      --text:#e8ecff;
+      --muted:#b6c0e6;
+      --accent:#ff2d55;
+      --accent2:#5b8cff;
+      --ok:#19c37d;
+      --line:#283253;
+      --card:#10172a;
+      --white:#ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; font-family: Inter, Segoe UI, Arial, sans-serif; background:linear-gradient(180deg,#090f1f 0%, #0b1020 60%, #0f1731 100%); color:var(--text); }
+    a { color:#9eb7ff; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .wrap { max-width:1100px; margin:0 auto; padding:20px; }
+    .nav {
+      display:flex; align-items:center; justify-content:space-between;
+      background:rgba(16,23,42,.85); backdrop-filter: blur(6px);
+      border:1px solid var(--line); border-radius:14px; padding:12px 16px; position:sticky; top:14px; z-index:20;
+    }
+    .brand { display:flex; gap:12px; align-items:center; }
+    .logo { width:44px; height:44px; border-radius:10px; object-fit:cover; border:1px solid var(--line); background:#fff; }
+    .brand h1 { font-size:1.05rem; margin:0; }
+    .tag { color:var(--muted); font-size:.86rem; }
+    .navlinks { display:flex; gap:14px; flex-wrap:wrap; }
+    .pill { border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#121b33; font-size:.86rem; }
+    .hero { margin-top:26px; display:grid; grid-template-columns:1.2fr .8fr; gap:18px; }
+    .card { background:linear-gradient(180deg,#121a32 0%, #0f162b 100%); border:1px solid var(--line); border-radius:18px; padding:20px; }
+    .hero h2 { margin:0 0 10px; font-size:2rem; line-height:1.2; }
+    .hero p { color:var(--muted); margin:0 0 14px; }
+    .cta { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+    .btn {
+      border:0; border-radius:10px; padding:10px 14px; font-weight:600; cursor:pointer;
+      background:linear-gradient(90deg,var(--accent),#ff4d7a); color:var(--white);
+    }
+    .btn.secondary { background:#1a2648; border:1px solid var(--line); color:var(--text); }
+    .stat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .stat { border:1px solid var(--line); border-radius:12px; padding:12px; background:var(--card); }
+    .stat b { display:block; font-size:1.08rem; margin-bottom:5px; }
+    .section { margin-top:18px; }
+    .section h3 { margin:0 0 10px; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .feature { border:1px solid var(--line); border-radius:14px; padding:14px; background:var(--card); }
+    .feature h4 { margin:0 0 8px; }
+    .feature p { margin:0; color:var(--muted); font-size:.94rem; }
+    .demo {
+      display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    }
+    .field { margin-bottom:10px; }
+    label { display:block; font-size:.84rem; color:var(--muted); margin-bottom:6px; }
+    input {
+      width:100%; background:#0d1530; color:var(--text);
+      border:1px solid var(--line); border-radius:10px; padding:10px;
+    }
+    .small { color:var(--muted); font-size:.85rem; }
+    .status {
+      margin-top:10px; border:1px dashed #37509e; background:#0f1a38; border-radius:10px; padding:10px; font-size:.9rem;
+    }
+    .ok { color:var(--ok); }
+    .warn { color:#ffd56a; }
+    footer { margin:18px 0 8px; color:var(--muted); font-size:.86rem; text-align:center; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns:1fr; }
+      .features { grid-template-columns:1fr; }
+      .demo { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>GeekBeats</h1>
-  <div class="card">
-    <p>GeekBeats creates short-form music edits and cinematic cuts designed to inspire.</p>
-    <p>Watch the channel: <a href="https://www.youtube.com/@aigeekbeats" target="_blank" rel="noopener">YouTube</a></p>
-    <p><a href="./terms.html">Terms of Service</a> · <a href="./privacy.html">Privacy Policy</a></p>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">
+        <img src="./assets/resize_logo.jpg" alt="GeekBeats logo" class="logo" />
+        <div>
+          <h1>GeekBeats</h1>
+          <div class="tag">AI Video Automation Studio</div>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a class="pill" href="#integration">TikTok Integration</a>
+        <a class="pill" href="./terms/">Terms</a>
+        <a class="pill" href="./privacy/">Privacy</a>
+        <a class="pill" href="https://www.youtube.com/@aigeekbeats" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="card">
+        <h2>Automated Short-Form Video Publishing, Built for Creators.</h2>
+        <p>
+          GeekBeats helps creators generate, prepare, and publish short-form video content with clear policy controls,
+          secure workflows, and platform-ready metadata.
+        </p>
+        <p>
+          Official web domain used for integration: <b>https://geekbeatsai.github.io/</b>
+        </p>
+        <div class="cta">
+          <a class="btn" href="#integration">Open Integration Demo</a>
+          <a class="btn secondary" href="./terms/">Terms of Service</a>
+          <a class="btn secondary" href="./privacy/">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stat-grid">
+          <div class="stat"><b>Web/Desktop</b><span class="small">Primary app URL verified on GeekBeats domain</span></div>
+          <div class="stat"><b>Legal Compliance</b><span class="small">Dedicated Terms and Privacy pages</span></div>
+          <div class="stat"><b>Sandbox Ready</b><span class="small">Review-safe TikTok integration flow section</span></div>
+          <div class="stat"><b>Creator Focus</b><span class="small">Automated video operations and publishing</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h3>Platform Capabilities</h3>
+      <div class="features">
+        <article class="feature">
+          <h4>Account Connection</h4>
+          <p>Connect TikTok account via OAuth authorization to allow secure app actions per user consent.</p>
+        </article>
+        <article class="feature">
+          <h4>Upload Workflow</h4>
+          <p>Prepare and submit short-form videos with metadata validation and status tracking.</p>
+        </article>
+        <article class="feature">
+          <h4>Compliance & Transparency</h4>
+          <p>Clear policy pages, domain ownership verification, and controlled feature scope for review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="integration" class="section card">
+      <h3>TikTok Integration Demo Panel</h3>
+      <p class="small">
+        This panel is designed for reviewer walkthrough and integration testing. Use your TikTok app credentials in sandbox mode.
+      </p>
+      <div class="demo">
+        <div>
+          <div class="field">
+            <label for="clientKey">TikTok Client Key</label>
+            <input id="clientKey" type="text" placeholder="Enter client_key" />
+          </div>
+          <div class="field">
+            <label for="redirectUri">Redirect URI</label>
+            <input id="redirectUri" type="text" value="https://geekbeatsai.github.io/" />
+          </div>
+          <div class="field">
+            <label for="scope">Scopes</label>
+            <input id="scope" type="text" value="user.info.basic,video.upload,video.publish" />
+          </div>
+          <div class="cta">
+            <button id="connectBtn" class="btn">Connect TikTok</button>
+            <button id="uploadBtn" class="btn secondary">Upload Test Video</button>
+          </div>
+          <div id="status" class="status">
+            <span class="warn">Waiting for connection...</span>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin-top:0;">Reviewer Steps</h4>
+          <ol class="small" style="line-height:1.75;">
+            <li>Open this domain and confirm URL in address bar.</li>
+            <li>Open Terms and Privacy pages from navigation.</li>
+            <li>Click <b>Connect TikTok</b> to start OAuth flow.</li>
+            <li>Approve on TikTok consent page and return to this domain.</li>
+            <li>Click <b>Upload Test Video</b> to run your configured backend upload flow.</li>
+            <li>Show success response/status on this page.</li>
+          </ol>
+          <p class="small">
+            Note: actual upload requires server-side token exchange and API handling.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> GeekBeats · Contact: <a href="mailto:geekbeats.contact@gmail.com">geekbeats.contact@gmail.com</a>
+    </footer>
   </div>
+
+  <script>
+    const qs = new URLSearchParams(window.location.search);
+    const statusEl = document.getElementById('status');
+    const code = qs.get('code');
+    const state = qs.get('state');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (code) {
+      statusEl.innerHTML = `<span class="ok">OAuth callback received.</span><br><span class="small">code=${code.substring(0, 12)}... ${state ? `(state=${state})` : ''}</span>`;
+    }
+
+    document.getElementById('connectBtn').addEventListener('click', () => {
+      const clientKey = document.getElementById('clientKey').value.trim();
+      const redirectUri = document.getElementById('redirectUri').value.trim();
+      const scope = document.getElementById('scope').value.trim();
+
+      if (!clientKey || !redirectUri || !scope) {
+        statusEl.innerHTML = '<span class="warn">Please fill client key, redirect URI, and scopes.</span>';
+        return;
+      }
+
+      const authUrl = new URL('https://www.tiktok.com/v2/auth/authorize/');
+      authUrl.searchParams.set('client_key', clientKey);
+      authUrl.searchParams.set('response_type', 'code');
+      authUrl.searchParams.set('scope', scope);
+      authUrl.searchParams.set('redirect_uri', redirectUri);
+      authUrl.searchParams.set('state', 'geekbeats-demo-state');
+      window.location.href = authUrl.toString();
+    });
+
+    document.getElementById('uploadBtn').addEventListener('click', () => {
+      statusEl.innerHTML = '<span class="warn">Upload step requires your backend endpoint (token exchange + Content Posting API). Connect OAuth first, then call your API and show response here.</span>';
+    });
+  </script>
 </body>
 </html>
