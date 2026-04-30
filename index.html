@@ -78,13 +78,11 @@
     .feature { border:1px solid var(--line); border-radius:6px; padding:14px; background:var(--card); }
     .feature h4 { margin:0 0 8px; }
     .feature p { margin:0; color:var(--muted); font-size:.94rem; }
-    .links-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-    .link-card { border:1px solid var(--line); border-radius:6px; padding:14px; background:var(--card); }
     .small { color:var(--muted); font-size:.87rem; }
     footer { margin:18px 0 8px; color:var(--muted); font-size:.86rem; text-align:center; }
     @media (max-width: 900px) {
       .hero { grid-template-columns:1fr; }
-      .features, .links-grid { grid-template-columns:1fr; }
+      .features { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -99,14 +97,14 @@
         </div>
       </div>
       <div class="navlinks">
-        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#about-geekbeats">About</a>
         <a class="pill" href="./terms/">Terms</a>
         <a class="pill" href="./privacy/">Privacy</a>
         <a class="pill" href="https://www.youtube.com/@aigeekbeats" target="_blank" rel="noopener">YouTube</a>
       </div>
     </nav>
 
-    <section id="about" class="hero">
+    <section class="hero">
       <div class="card">
         <h2>Automated Video Upload for Creators.</h2>
         <p>
@@ -142,26 +140,17 @@
       </div>
     </section>
 
-    <section class="section card">
-      <h3>Quick Links</h3>
-      <div class="links-grid">
-        <div class="link-card">
-          <h4 style="margin:0 0 8px;">Website</h4>
-          <a href="https://geekbeatsai.github.io/">https://geekbeatsai.github.io/</a>
-        </div>
-        <div class="link-card">
-          <h4 style="margin:0 0 8px;">Contact</h4>
-          <a href="mailto:bestxmusicxai@gmail.com">bestxmusicxai@gmail.com</a>
-        </div>
-        <div class="link-card">
-          <h4 style="margin:0 0 8px;">Terms of Service</h4>
-          <a href="./terms/">Open Terms page</a>
-        </div>
-        <div class="link-card">
-          <h4 style="margin:0 0 8px;">Privacy Policy</h4>
-          <a href="./privacy/">Open Privacy page</a>
-        </div>
-      </div>
+    <section id="about-geekbeats" class="section card">
+      <h3>About GeekBeats</h3>
+      <p>
+        GeekBeats is built for one clear goal: make video upload automated so manual posting does not slow down creation.
+      </p>
+      <p>
+        The focus is simple—spend more time on editing and music, and less time repeating upload steps.
+      </p>
+      <p>
+        This site provides the official public website, contact details, and legal pages required for platform integrations.
+      </p>
     </section>
 
     <footer>
